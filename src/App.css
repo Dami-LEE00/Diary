@@ -1,38 +1,233 @@
+/* App */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+}
+.App h1 {
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* Home */
+.diary-link {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.diary-link .link {
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  transition: 0.15s;
+}
+.diary-link .link:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.diary-link .link:active {
+  background-color: #bbb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Common CSS */
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #ddd;
+  padding: 10px 20px;
+}
+.Header h3 {
+  margin: 0;
+}
+.Header .faXmark {
+  font-size: 24px;
+  cursor: pointer;
+}
+.DiaryEditor, .DiaryList {
+  width: 50%;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+.diary_wrapper {
+  padding: 20px;
+}
+
+
+
+/* DiaryEditor */
+.DiaryEditor .diary_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.DiaryEditor .diary_wrapper h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.DiaryEditor .author_emotion {
+  display: flex;
+  gap: 10px;
+}
+.DiaryEditor .author_emotion .author {
+  display: flex;
+  gap: 5px;
+  flex: 2;
+}
+.DiaryEditor .author_emotion .emotion {
+  display: flex;
+  gap: 5px;
+  flex: 1;
+}
+.DiaryEditor .author_emotion .author input {
+  flex: 1;
+}
+.DiaryEditor .author_emotion .emotion select {
+  flex: 1;
+}
+.DiaryEditor span {
+  display: inline-block;
+  width: 80px;
+  padding: 5px 10px;
+  background-color: #ddd;
+}
+.DiaryEditor .title {
+  display: flex;
+  gap: 5px;
+}
+.DiaryEditor .title input {
+  flex: 1;
+}
+.DiaryEditor .content {
+  display: flex;
+  flex: 1;
+}
+.DiaryEditor .content textarea {
+  padding: 10px;
+  flex: 1;
+  height: 200px;
+}
+.DiaryEditor .btn {
+  display: flex;
+  justify-content: space-between;
+}
+.DiaryEditor .btn button {
+  padding: 3px 9px;
+}
+
+
+
+
+
+/* DiaryList */
+.DiaryList {
+  background-color: #fff;
+}
+.DiaryList .diary_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.DiaryList .diary_wrapper h4 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+
+/* DiaryItem */
+.DiaryItem {
+  background-color: #e7e7e7;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.DiaryItem .date {
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px solid #999;
+  padding-bottom: 5px;
+}
+.DiaryItem .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.DiaryItem .info .title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.DiaryItem .content {
+  padding: 15px 0;
+}
+.DiaryItem .content textarea {
+  width: 90%;
+}
+.DiaryItem .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+.DiaryItem .btn button {
+  padding: 3px 8px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 970px) {
+  .DiaryEditor, .DiaryList {
+    width: 70%;
+    background-color: #f7f7f7;
+    overflow: hidden;
   }
-  to {
-    transform: rotate(360deg);
+  .DiaryEditor .author_emotion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .DiaryEditor .content textarea {
+    padding: 10px;
+    flex: 1;
+    height: 400px;
+  }
+}
+
+
+
+
+@media (max-width: 470px) {
+  .DiaryEditor, .DiaryList {
+    width: 100%;
+    background-color: #f7f7f7;
+    overflow: hidden;
+  }
+  .DiaryEditor .author_emotion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .DiaryEditor .content textarea {
+    padding: 10px;
+    flex: 1;
+    height: 400px;
   }
 }
