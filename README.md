@@ -1,4 +1,4 @@
-바로가기 => https://calm-khapse-0b9c3c.netlify.app/
+Diary 바로가기 => https://calm-khapse-0b9c3c.netlify.app/
 
 # Getting Started with Create React App
 
